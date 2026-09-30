@@ -12,7 +12,7 @@ def test_initial_chintology_package_layout() -> None:
         if path.is_dir() and path.name != "__pycache__"
     }
 
-    assert package_dirs == {"model", "maths"}
+    assert package_dirs == {"model", "maths", "graphs"}
 
 
 def test_initial_chintology_packages() -> None:
