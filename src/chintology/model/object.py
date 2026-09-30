@@ -2,7 +2,9 @@
 
 from pydantic import BaseModel, ConfigDict
 
-from .identifiers import SemanticId
+from .content import MathematicalContent
+from .identifiers import LatexLabel, SemanticId
+from .provenance import SourceProvenance
 
 
 class MathematicalObject(BaseModel):
@@ -14,3 +16,6 @@ class MathematicalObject(BaseModel):
     )
 
     semantic_id: SemanticId
+    latex_label: LatexLabel | None = None
+    content: MathematicalContent
+    provenance: SourceProvenance
