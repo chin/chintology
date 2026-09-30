@@ -1,7 +1,7 @@
 [project]
 name = "chintology"
 version = "0.1.0"
-description = "Add your description here"
+description = "Theory and proof architecture for a dissertation-derived mathematical framework"
 readme = "README.md"
 authors = [
     { name = "Chin", email = "cisaache@gmail.com" }
@@ -25,3 +25,31 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.16.9",
 ]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "SIM",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["chintology"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
