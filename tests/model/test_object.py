@@ -11,7 +11,7 @@ from chintology.model.semantic_type import SemanticType
 
 def make_mathematical_object() -> MathematicalObject:
     return MathematicalObject(
-        semantic_id=SemanticId("object-id"),
+        semantic_id=SemanticId("CHI-000001"),
         latex_label=LatexLabel("latex-label"),
         content=MathematicalContent(
             proof_role=ProofRole.DEFINITION,
@@ -29,7 +29,7 @@ def make_mathematical_object() -> MathematicalObject:
 def test_mathematical_object_has_persistent_semantic_id() -> None:
     mathematical_object = make_mathematical_object()
 
-    assert mathematical_object.semantic_id == SemanticId("object-id")
+    assert mathematical_object.semantic_id == SemanticId("CHI-000001")
 
 
 def test_mathematical_object_preserves_latex_label() -> None:
@@ -72,4 +72,4 @@ def test_mathematical_object_is_immutable() -> None:
     mathematical_object = make_mathematical_object()
 
     with pytest.raises(ValidationError):
-        mathematical_object.semantic_id = SemanticId("different-id")
+        mathematical_object.semantic_id = SemanticId("CHI-000002")
