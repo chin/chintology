@@ -47,12 +47,12 @@ def make_relationship(
 
 
 def test_registry_accepts_objects_and_relationships() -> None:
-    source = make_object("source")
-    target = make_object("target")
+    source = make_object("CHI-000001")
+    target = make_object("CHI-000002")
     relationship = make_relationship(
-        "relationship",
-        "source",
-        "target",
+        "CHI-000003",
+        "CHI-000001",
+        "CHI-000002",
     )
 
     registry = TheoryRegistry(
@@ -68,78 +68,78 @@ def test_registry_rejects_duplicate_object_semantic_ids() -> None:
     with pytest.raises(ValidationError):
         TheoryRegistry(
             objects=(
-                make_object("duplicate"),
-                make_object("duplicate"),
+                make_object("CHI-000001"),
+                make_object("CHI-000001"),
             )
         )
 
 
 def test_registry_rejects_duplicate_relationship_semantic_ids() -> None:
-    source = make_object("source")
-    target = make_object("target")
+    source = make_object("CHI-000001")
+    target = make_object("CHI-000002")
 
     with pytest.raises(ValidationError):
         TheoryRegistry(
             objects=(source, target),
             relationships=(
                 make_relationship(
-                    "duplicate",
-                    "source",
-                    "target",
+                    "CHI-000003",
+                    "CHI-000001",
+                    "CHI-000002",
                 ),
                 make_relationship(
-                    "duplicate",
-                    "source",
-                    "target",
+                    "CHI-000003",
+                    "CHI-000001",
+                    "CHI-000002",
                 ),
             ),
         )
 
 
 def test_registry_rejects_semantic_id_shared_by_object_and_relationship() -> None:
-    source = make_object("source")
-    target = make_object("target")
+    source = make_object("CHI-000001")
+    target = make_object("CHI-000002")
 
     with pytest.raises(ValidationError):
         TheoryRegistry(
             objects=(source, target),
             relationships=(
                 make_relationship(
-                    "source",
-                    "source",
-                    "target",
+                    "CHI-000001",
+                    "CHI-000001",
+                    "CHI-000002",
                 ),
             ),
         )
 
 
 def test_registry_rejects_unknown_relationship_source() -> None:
-    target = make_object("target")
+    target = make_object("CHI-000002")
 
     with pytest.raises(ValidationError):
         TheoryRegistry(
             objects=(target,),
             relationships=(
                 make_relationship(
-                    "relationship",
-                    "unknown",
-                    "target",
+                    "CHI-000003",
+                    "CHI-999999",
+                    "CHI-000002",
                 ),
             ),
         )
 
 
 def test_registry_rejects_unknown_relationship_target() -> None:
-    source = make_object("source")
+    source = make_object("CHI-000001")
 
     with pytest.raises(ValidationError):
         TheoryRegistry(
             objects=(source,),
             relationships=(
                 make_relationship(
-                    "relationship",
-                    "source",
-                    "unknown",
+                    "CHI-000003",
+                    "CHI-000001",
+                    "CHI-999999",
                 ),
             ),
         )

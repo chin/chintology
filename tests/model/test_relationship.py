@@ -9,10 +9,10 @@ from chintology.model.relationship_type import RelationshipType
 
 def make_relationship() -> Relationship:
     return Relationship(
-        semantic_id=SemanticId("relationship-id"),
+        semantic_id=SemanticId("CHI-000003"),
         relationship_type=RelationshipType.ASSUMES,
-        source_id=SemanticId("source-id"),
-        target_id=SemanticId("target-id"),
+        source_id=SemanticId("CHI-000001"),
+        target_id=SemanticId("CHI-000002"),
         provenance=SourceProvenance(
             source="source",
             location="location",
@@ -23,7 +23,7 @@ def make_relationship() -> Relationship:
 def test_relationship_has_persistent_semantic_id() -> None:
     relationship = make_relationship()
 
-    assert relationship.semantic_id == SemanticId("relationship-id")
+    assert relationship.semantic_id == SemanticId("CHI-000003")
 
 
 def test_relationship_preserves_relationship_type() -> None:
@@ -35,8 +35,8 @@ def test_relationship_preserves_relationship_type() -> None:
 def test_relationship_references_source_and_target_semantic_ids() -> None:
     relationship = make_relationship()
 
-    assert relationship.source_id == SemanticId("source-id")
-    assert relationship.target_id == SemanticId("target-id")
+    assert relationship.source_id == SemanticId("CHI-000001")
+    assert relationship.target_id == SemanticId("CHI-000002")
 
 
 def test_relationship_preserves_provenance() -> None:
@@ -62,4 +62,4 @@ def test_relationship_is_immutable() -> None:
     relationship = make_relationship()
 
     with pytest.raises(ValidationError):
-        relationship.source_id = SemanticId("different-source")
+        relationship.source_id = SemanticId("CHI-000004")
