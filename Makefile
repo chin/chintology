@@ -1,4 +1,4 @@
-.PHONY: sync lint format format-check test check fix
+..PHONY: sync lint format format-check test check fix graph-demo
 
 sync:
 	uv sync --locked
@@ -20,3 +20,6 @@ check: lint format-check test
 fix:
 	uv run --frozen ruff check . --fix
 	uv run --frozen ruff format .
+
+graph-demo:
+	uv run --frozen python scripts/render_graph_demo.py
