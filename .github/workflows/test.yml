@@ -31,10 +31,10 @@ jobs:
         run: uv python install
 
       - name: Sync locked environment
-        run: uv sync --locked
+        run: make sync
 
       - name: Lint
-        run: uv run --frozen ruff check .
+        run: make lint
 
   format:
     name: Format
@@ -55,10 +55,10 @@ jobs:
         run: uv python install
 
       - name: Sync locked environment
-        run: uv sync --locked
+        run: make sync
 
       - name: Check formatting
-        run: uv run --frozen ruff format --check .
+        run: make format-check
 
   tests:
     name: Tests
@@ -79,14 +79,7 @@ jobs:
         run: uv python install
 
       - name: Sync locked environment
-        run: uv sync --locked
+        run: make sync
 
       - name: Run tests
-        run: uv run --frozen pytest -q
-    #   - name: Run tests with coverage
-    #     run: >
-    #       uv run --frozen pytest
-    #       --cov=chintology
-    #       --cov-branch
-    #       --cov-report=term-missing
-    #       -q
+        run: make test
