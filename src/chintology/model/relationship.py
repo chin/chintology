@@ -3,6 +3,8 @@
 from pydantic import BaseModel, ConfigDict
 
 from .identifiers import SemanticId
+from .provenance import SourceProvenance
+from .relationship_type import RelationshipType
 
 
 class Relationship(BaseModel):
@@ -14,5 +16,7 @@ class Relationship(BaseModel):
     )
 
     semantic_id: SemanticId
+    relationship_type: RelationshipType
     source_id: SemanticId
     target_id: SemanticId
+    provenance: SourceProvenance
