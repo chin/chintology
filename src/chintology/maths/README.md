@@ -1,3 +1,5 @@
 # Maths
 
-`maths` is the theory: the collection of mathematical objects and relationships that construct the theory as a bidirectional control graph.
+`maths` defines the mathematical objects and relationships that construct the theory.
+
+See `docs/architecture/maths.md` for the maths architecture.

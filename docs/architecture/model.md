@@ -1,6 +1,6 @@
 # Model: How is the theory represented? i.e. its language
 
-`model` defines how those mathematical objects and relationships represented, identified, typed, attributed, and tracked.
+`model` defines how those mathematical objects and relationships are represented, identified, typed, attributed, and tracked.
 
 It answers:
 
