@@ -11,9 +11,6 @@ dependencies = [
     "pydantic>=2.13.5",
 ]
 
-[project.scripts]
-chintology = "chintology:main"
-
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
 build-backend = "uv_build"
@@ -29,6 +26,7 @@ dev = [
 [tool.ruff]
 target-version = "py314"
 line-length = 88
+extend-exclude = ["scratch"]
 
 [tool.ruff.lint]
 select = [
@@ -45,6 +43,7 @@ addopts = [
     "--strict-config",
     "--strict-markers",
 ]
+testpaths = ["tests"]
 
 [tool.coverage.run]
 branch = true

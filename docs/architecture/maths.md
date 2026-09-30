@@ -21,4 +21,4 @@ proof obligation
 : A mathematical requirement that must be established before the dependent mathematical result can be established.
 
 specialization
-: A distinct mathematical object obtained by applying an explicitly defined specialization to another mathematical object while preserving the applicable inherited conditions.
+: A distinct mathematical object obtained by applying an defined specialization to another mathematical object while preserving the applicable inherited conditions.
