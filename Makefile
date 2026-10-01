@@ -1,4 +1,4 @@
-..PHONY: sync lint format format-check test check fix graph-demo
+.PHONY: sync lint format format-check test check fix graph graph-view
 
 sync:
 	uv sync --locked
@@ -21,5 +21,8 @@ fix:
 	uv run --frozen ruff check . --fix
 	uv run --frozen ruff format .
 
-graph-demo:
-	uv run --frozen python scripts/render_graph_demo.py
+graph:
+	uv run --frozen python scripts/render_maths.py
+
+graph-view: graph
+	code docs/generated/maths.md

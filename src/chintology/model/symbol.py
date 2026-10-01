@@ -1,15 +1,14 @@
-"""Mathematical symbol representation."""
+"""Mathematical symbols used by first-class mathematical objects."""
 
 from pydantic import BaseModel, ConfigDict
 
 
 class MathematicalSymbol(BaseModel):
-    """Mathematical symbol and its LaTeX representation."""
+    """First-class mathematical symbol."""
 
     model_config = ConfigDict(
         frozen=True,
         extra="forbid",
     )
 
-    macro: str
     latex: str

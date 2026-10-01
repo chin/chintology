@@ -1,0 +1,25 @@
+{
+  "objects": {
+    "objects": [
+      {
+        "semantic_id": "CHI-000001",
+        "name": "Scheme Class",
+        "symbol": {
+          "latex": "\\mathcal{S}"
+        },
+        "semantic_type": "class"
+      },
+      {
+        "semantic_id": "CHI-000002",
+        "name": "Adversary Class",
+        "symbol": {
+          "latex": "\\mathcal{A}"
+        },
+        "semantic_type": "class"
+      }
+    ]
+  },
+  "relationships": {
+    "relationships": []
+  }
+}
