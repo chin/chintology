@@ -1,7 +1,8 @@
 import pytest
 from pydantic import ValidationError
 
-from chintology.model.identifiers import SemanticId
+from chintology.model.content import MathematicalContent
+from chintology.model.identifiers import LatexLabel, SemanticId
 from chintology.model.object import MathematicalObject
 from chintology.model.semantic_type import SemanticType
 from chintology.model.symbol import MathematicalSymbol
