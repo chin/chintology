@@ -100,9 +100,15 @@ def test_registry_json_loads() -> None:
 def test_registry_json_materializes_objects() -> None:
     registry = load_registry(REGISTRY)
 
-    assert len(registry.objects.objects) == 2
+    objects = registry.objects.objects
 
-    scheme_class = registry.objects.objects[0]
+    assert len(objects) == 25
+
+    by_id = {obj.semantic_id.root: obj for obj in objects}
+
+    assert set(by_id) == {f"CHI-{number:06d}" for number in range(1, 26)}
+
+    scheme_class = by_id["CHI-000001"]
 
     assert scheme_class.semantic_id == SemanticId("CHI-000001")
     assert scheme_class.name == "Scheme Class"
@@ -110,6 +116,11 @@ def test_registry_json_materializes_objects() -> None:
         latex=r"\mathcal{S}",
     )
     assert scheme_class.semantic_type == SemanticType("class")
+
+    odds_ratio = by_id["CHI-000025"]
+
+    assert odds_ratio.name == "Event-to-Complement Odds Ratio"
+    assert odds_ratio.semantic_type == SemanticType("proposition")
 
 
 def test_registry_json_materializes_relationships() -> None:
