@@ -1,14 +1,14 @@
-"""Mathematical objects that constitute the Chintology theory."""
+"""First-class mathematical objects."""
 
 from pydantic import BaseModel, ConfigDict
 
-from .content import MathematicalContent
-from .identifiers import LatexLabel, SemanticId
-from .provenance import SourceProvenance
+from .identifiers import SemanticId
+from .semantic_type import SemanticType
+from .symbol import MathematicalSymbol
 
 
 class MathematicalObject(BaseModel):
-    """First-class mathematical object in the Chintology theory."""
+    """First-class mathematical object."""
 
     model_config = ConfigDict(
         frozen=True,
@@ -16,6 +16,6 @@ class MathematicalObject(BaseModel):
     )
 
     semantic_id: SemanticId
-    latex_label: LatexLabel | None = None
-    content: MathematicalContent
-    provenance: SourceProvenance
+    name: str
+    symbol: MathematicalSymbol | None = None
+    semantic_type: SemanticType

@@ -1,12 +1,14 @@
-"""Appearances of mathematical objects and relationships."""
+"""First-class appearances of mathematical objects."""
 
 from pydantic import BaseModel, ConfigDict
 
-from .identifiers import AppearanceId, SemanticId
+from .identifiers import AppearanceId, LatexLabel, SemanticId
+from .provenance import SourceProvenance
+from .role import ProofRole
 
 
 class Appearance(BaseModel):
-    """Appearance of a mathematical object or relationship."""
+    """Source-specific appearance of a mathematical object."""
 
     model_config = ConfigDict(
         frozen=True,
@@ -15,3 +17,7 @@ class Appearance(BaseModel):
 
     appearance_id: AppearanceId
     semantic_id: SemanticId
+    latex_label: LatexLabel | None = None
+    proof_role: ProofRole
+    exact_latex: str
+    provenance: SourceProvenance
