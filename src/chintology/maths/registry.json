@@ -16,6 +16,178 @@
           "latex": "\\mathcal{A}"
         },
         "semantic_type": "class"
+      },
+      {
+        "semantic_id": "CHI-000003",
+        "name": "Scheme Class Nonemptiness",
+        "symbol": null,
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000004",
+        "name": "Fixed Scheme Existence",
+        "symbol": null,
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000005",
+        "name": "Fixed Scheme",
+        "symbol": {
+          "latex": "\\mathcal{S}"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000006",
+        "name": "Adversary Class Nonemptiness",
+        "symbol": null,
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000007",
+        "name": "Fixed Adversary Existence",
+        "symbol": null,
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000008",
+        "name": "Fixed Adversary",
+        "symbol": {
+          "latex": "\\mathcal{A}"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000009",
+        "name": "Fixed Scheme-Adversary Pair",
+        "symbol": {
+          "latex": "(\\mathcal{S},\\mathcal{A})"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000010",
+        "name": "Fixed Pair Adversarial Experiment",
+        "symbol": null,
+        "semantic_type": "definition"
+      },
+      {
+        "semantic_id": "CHI-000011",
+        "name": "Fixed Pair Adversarial Probability Space",
+        "symbol": {
+          "latex": "(\\Omega,\\mathcal{F},P)"
+        },
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000012",
+        "name": "Probability Space",
+        "symbol": {
+          "latex": "(\\Omega,\\mathcal{F},P)"
+        },
+        "semantic_type": "definition"
+      },
+      {
+        "semantic_id": "CHI-000013",
+        "name": "Probability Measure",
+        "symbol": {
+          "latex": "P"
+        },
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000014",
+        "name": "Sigma-Algebra Closure",
+        "symbol": {
+          "latex": "\\mathcal{F}"
+        },
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000015",
+        "name": "Probability Normalization",
+        "symbol": {
+          "latex": "P(\\Omega)=1"
+        },
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000016",
+        "name": "Finite Additivity for Disjoint Events",
+        "symbol": null,
+        "semantic_type": "assumption"
+      },
+      {
+        "semantic_id": "CHI-000017",
+        "name": "Adversarial Success Event",
+        "symbol": {
+          "latex": "W"
+        },
+        "semantic_type": "definition"
+      },
+      {
+        "semantic_id": "CHI-000018",
+        "name": "Event Measurability",
+        "symbol": {
+          "latex": "W\\in\\mathcal{F}"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000019",
+        "name": "Complement Event",
+        "symbol": {
+          "latex": "\\neg W"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000020",
+        "name": "Complement Probability Identity",
+        "symbol": {
+          "latex": "P(\\neg W)=1-P(W)"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000021",
+        "name": "Probability of Success",
+        "symbol": {
+          "latex": "q=P(W)"
+        },
+        "semantic_type": "definition"
+      },
+      {
+        "semantic_id": "CHI-000022",
+        "name": "Success Probability Bounds",
+        "symbol": {
+          "latex": "0\\leq q\\leq1"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000023",
+        "name": "Complement Probability of Success",
+        "symbol": {
+          "latex": "P(\\neg W)=1-q"
+        },
+        "semantic_type": "lemma"
+      },
+      {
+        "semantic_id": "CHI-000024",
+        "name": "Odds as Event-to-Complement Ratio",
+        "symbol": {
+          "latex": "\\operatorname{Odds}(W)"
+        },
+        "semantic_type": "definition"
+      },
+      {
+        "semantic_id": "CHI-000025",
+        "name": "Event-to-Complement Odds Ratio",
+        "symbol": {
+          "latex": "\\frac{q}{1-q}"
+        },
+        "semantic_type": "proposition"
       }
     ]
   },

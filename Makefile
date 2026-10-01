@@ -1,4 +1,4 @@
-.PHONY: sync lint format format-check test check fix graph graph-view
+.PHONY: sync lint format format-check test check fix registry registry-test graph graph-view
 
 sync:
 	uv sync --locked
@@ -26,3 +26,14 @@ graph:
 
 graph-view: graph
 	code docs/generated/maths.md
+
+registry:
+	uv run --frozen python scripts/show_registry.py
+
+registry-test:
+	uv run --frozen pytest \
+		tests/maths/test_objects.py \
+		tests/maths/test_relationships.py \
+		tests/maths/test_registry.py \
+		tests/graphs/test_registry_render.py \
+		-q
